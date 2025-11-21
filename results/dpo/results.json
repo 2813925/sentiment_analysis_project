@@ -1,0 +1,29 @@
+{
+  "model_name": "BERT + SFT + DPO",
+  "dpo_train_samples": 180,
+  "dpo_eval_samples": 20,
+  "test_samples": 776,
+  "eval_results": {
+    "eval_loss": 0.04827995225787163,
+    "eval_accuracy": 1.0,
+    "eval_f1": 1.0,
+    "eval_f1_macro": 1.0,
+    "eval_runtime": 0.0864,
+    "eval_samples_per_second": 231.411,
+    "eval_steps_per_second": 23.141,
+    "epoch": 2.0
+  },
+  "test_results": {
+    "eval_loss": 0.2715691924095154,
+    "eval_accuracy": 0.8917525773195877,
+    "eval_f1": 0.8941834299969666,
+    "eval_f1_macro": 0.8807202459376373,
+    "eval_runtime": 2.234,
+    "eval_samples_per_second": 347.364,
+    "eval_steps_per_second": 21.934,
+    "epoch": 2.0
+  },
+  "classification_report": "              precision    recall  f1-score   support\n\n          负面     0.7703    0.9344    0.8444       244\n          正面     0.9667    0.8722    0.9170       532\n\n    accuracy                         0.8918       776\n   macro avg     0.8685    0.9033    0.8807       776\nweighted avg     0.9049    0.8918    0.8942       776\n",
+  "training_time": 14.7789,
+  "timestamp": "2025-11-20 00:27:46"
+}

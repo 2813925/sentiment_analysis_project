@@ -1,0 +1,29 @@
+{
+  "model_name": "BERT + SFT",
+  "train_samples": 6204,
+  "eval_samples": 775,
+  "test_samples": 776,
+  "eval_results": {
+    "eval_loss": 0.41114485263824463,
+    "eval_accuracy": 0.9264516129032258,
+    "eval_f1": 0.9267276526154373,
+    "eval_f1_macro": 0.9154100244147638,
+    "eval_runtime": 1.1467,
+    "eval_samples_per_second": 675.845,
+    "eval_steps_per_second": 42.731,
+    "epoch": 4.0
+  },
+  "test_results": {
+    "eval_loss": 0.45211052894592285,
+    "eval_accuracy": 0.9188144329896907,
+    "eval_f1": 0.9187691955411632,
+    "eval_f1_macro": 0.9057408103652718,
+    "eval_runtime": 1.1327,
+    "eval_samples_per_second": 685.115,
+    "eval_steps_per_second": 43.261,
+    "epoch": 4.0
+  },
+  "classification_report": "              precision    recall  f1-score   support\n\n          负面     0.8724    0.8689    0.8706       244\n          正面     0.9400    0.9417    0.9408       532\n\n    accuracy                         0.9188       776\n   macro avg     0.9062    0.9053    0.9057       776\nweighted avg     0.9187    0.9188    0.9188       776\n",
+  "training_time": 196.7548,
+  "timestamp": "2025-11-16 21:14:05"
+}
