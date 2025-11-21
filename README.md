@@ -11,19 +11,20 @@ sentiment_analysis_project/
 │   ├── bert_baseline/             # 基线模型
 │   ├── bert_sft/                  # SFT微调模型
 │   └── bert_dpo/                  # DPO微调模型
+├── results/                       # 训练结果
+│   ├── baseline                   # 基线训练结果
+│   ├── comparison                 # 对比训练结果
+│   ├── dpo                        # DPO训练
+│   ├── sft                        # SFT训练    
 ├── scripts/                       # 训练脚本
-│   ├── data_preparation.py        # 数据准备
-│   ├── train_baseline.py          # 基线训练
-│   ├── train_sft.py               # SFT训练
-│   ├── train_dpo.py               # DPO训练
-│   └── evaluate.py                # 评估脚本
-├── demo/                          # Demo应用
-│   └── gradio_app.py              # Gradio演示界面
-├── utils/                         # 工具函数
-│   ├── data_loader.py             # 数据加载
-│   └── metrics.py                 # 评估指标
-├── notebooks/                     # Jupyter notebooks
-│   └── analysis.ipynb             # 数据分析
+│   ├── 1_data_preparation.py      # 数据准备
+│   ├── 2_baseline_training.py     # 基线训练
+│   ├── 3_sft_training.py          # SFT训练 
+│   ├── 4_dpo_training.py          # DPO训练
+│   ├── 5_evaluation.py            # 评估脚本                          
+│   ├── 6_demo_app.py              # Gradio演示界面
+│   └── run_all.sh
+├── quick_test.sh
 ├── requirements.txt               # 依赖包
 └── README.md                      # 说明文档
 ```
