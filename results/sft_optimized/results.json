@@ -1,0 +1,18 @@
+{
+  "test_accuracy": 0.9742351046698873,
+  "test_f1": 0.9810874704491725,
+  "test_f1_macro": 0.970341715022566,
+  "test_loss": 0.07917995005846024,
+  "final_epoch": 5.0,
+  "early_stopped": true,
+  "training_time": "2025-11-24T21:44:15.736935",
+  "optimization_config": {
+    "dropout": 0.2,
+    "learning_rate": 2e-05,
+    "weight_decay": 0.02,
+    "max_grad_norm": 1.0,
+    "early_stopping_patience": 2,
+    "lr_scheduler": "cosine",
+    "max_epochs": 10
+  }
+}
