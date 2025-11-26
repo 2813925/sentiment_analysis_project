@@ -56,21 +56,20 @@ sentiment_analysis_project/
 │
 ├── scripts/                       # 训练脚本
 │   ├── 1_data_preprocessing.py    # 数据预处理
+│   ├── 1_generate_large_scale_dpo.py   # DPO数据大规模生成
 │   ├── 2_baseline_training.py     # Baseline训练
 │   ├── 3_sft_training.py          # SFT训练
 │   ├── 4_dpo_training.py          # DPO训练
-│   ├── 4_generate_large_scale_dpo.py   # DPO数据大规模生成
-│   ├── 4_visualize_dpo_results.py  # DPO结果可视化
+│   ├── 5_visualize_dpo_results.py  # DPO结果可视化
 │   ├── 5_evaluation.py            # 模型评估
-│   ├── compare_baseline_sft_dpo.py        # 三模型对比
-│   └── evaluate_three_models.py   # 三模型评估
+│   └── 6_demo_app.py              # Demo可视化
 │
 ├── results/                       # 结果目录
 │   ├── baseline/                  # Baseline结果
 │   ├── sft_optminzed/             # SFT结果
 │   ├── dpo_ensemble/              # DPO结果
 │   ├── baseline_sft_dpo_comparison/  # 三模型对比
-│   └── visualizations/            # 可视化图表
+│   └── dpo_visualization/            # 可视化图表
 │
 ├── README.md                      # 本文档
 │
@@ -118,9 +117,6 @@ python scripts/1_generate_large_scale_dpo.py
 # 标准训练
 python scripts/2_baseline_training.py
 
-# 快速测试（使用小数据集）
-python scripts/2_baseline_training.py --quick
-```
 
 **预期结果**: F1 Score ≈ 85-95%
 
@@ -132,9 +128,6 @@ python scripts/2_baseline_training.py --quick
 # SFT训练
 python scripts/3_sft_training.py
 
-# 使用优化配置
-python scripts/3_sft_training.py --config optimized
-```
 
 **预期结果**: F1 Score ≈ **98%** ⭐
 
@@ -326,7 +319,7 @@ Preference Margin: 0.3844
 
 **结论**:
 - 单模型已经很强，集成提升有限
-- 建议直接使用最佳单模型
+- 直接使用最佳单模型
 
 ---
 
@@ -608,107 +601,8 @@ print(f"情感: {sentiment}, 置信度: {confidence:.2%}")
 
 **建议**: 使用最佳单模型即可。
 
----
-
-### Q4: 该选择哪个模型部署？
-
-**回答**: 
-
-**标准分类任务** → **SFT Optimized** ⭐
-- F1=98.11%
-- 稳定可靠
-- 推荐用于生产
-
-**偏好对齐任务** → **DPO Best**
-- 适合人机交互
-- 偏好学习能力强
-
----
-
-### Q5: 如何复现实验结果？
-
-**回答**:
-
-```bash
-# 1. 准备环境
-pip install -r requirements.txt
-
-# 2. 训练Baseline
-python scripts/2_baseline_training.py
-
-# 3. SFT优化
-python scripts/3_sft_training.py
-
-# 4. DPO训练（使用最佳配置）
-python scripts/4_dpo_training.py --seed 2035 --dropout 0.16 --patience 2
-
-# 5. 评估对比
-python scripts/compare_baseline_sft_dpo.py
-```
-
----
 
 
 
----
-
-## 📝 更新日志
-
-### v1.0 (2024-11-26)
-
-- ✅ 完成Baseline模型训练
-- ✅ 完成SFT优化 (F1=98.11%)
-- ✅ 完成DPO训练 (F1=89.47%)
-- ✅ 实现集成学习
-- ✅ 完整的评估和可视化
-- ✅ 详细的文档
-
----
-
-
-
----
-
-
-
----
-
-
-
----
-
-
----
-
-
----
-
-## 🎯 快速总结
-
-### 三句话概括
-
-1. **Baseline** (85-95%) → **SFT优化** (**98.11%** ⭐) → **DPO训练** (89.47%)
-2. **SFT是最佳选择**，性能高、稳定、高效，推荐用于生产部署
-3. DPO虽然性能略低，但展示了偏好学习的潜力，适合特定场景
-
-### 立即开始
-
-```bash
-# 克隆项目
-git clone <repository_url>
-cd sentiment_analysis_project
-
-# 安装依赖
-pip install -r requirements.txt
-
-# 运行完整流程
-bash run_full_pipeline.sh
-
-# 或分步执行
-python scripts/2_baseline_training.py
-python scripts/3_sft_training.py  
-python scripts/4_dpo_training.py
-python scripts/compare_baseline_sft_dpo.py
-```
 
 
